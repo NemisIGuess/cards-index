@@ -1,0 +1,21 @@
+.navigation {
+  grid-area: navigation;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(68, 131, 68);
+}
+
+.navigation-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.navigation-link {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(39, 73, 167);
+}
