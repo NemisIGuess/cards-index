@@ -1,0 +1,28 @@
+.card {
+  width: 280px;
+  height: 390px;
+  background-color: aliceblue;
+  margin: 2em;
+  border-radius: 15px;
+  border: 3px solid black;
+  display: grid;
+  grid-template-rows: 30px 1.5fr 25px 1fr 40px;
+}
+
+.unit-name {
+  font-weight: bold;
+  padding: 3px 10px;
+  border-bottom: 1px solid green;
+}
+
+.unit-type {
+  font-weight: bold;
+  padding-left: 5px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.unit-stats {
+  border-top: 1px solid black;
+  text-align: center;
+}
