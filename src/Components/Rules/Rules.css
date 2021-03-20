@@ -1,0 +1,29 @@
+.rules {
+  display: flex;
+  padding: 3em;
+  flex-wrap: wrap;
+}
+
+.term {
+  margin: 1em;
+}
+
+dt {
+  background-color: rgb(18, 63, 83);
+  height: 3em;
+  padding: 1em;
+  color: white;
+  font-weight: bold;
+}
+
+.stat {
+  font-style: italic;
+  color: rgb(219, 135, 135);
+}
+
+dd {
+  width: 500px;
+  background-color: rgb(99, 152, 175);
+  height: fit-content;
+  padding: 1em;
+}
