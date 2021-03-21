@@ -22,10 +22,15 @@ const App = () => {
 
   const provider = firebase.initializeApp(firebaseConfig);
 
+  const signIn = () => {
+    const userLogIn = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(userLogIn);
+  };
+
   return (
     // <ContextProvider>
     <div className="container">
-      <Navigation provider={provider} />
+      <Navigation signIn={signIn} />
       <Switch>
         <Route path="/units" exact component={Units} />
         <Route path="/spells" exact component={Spells} />
