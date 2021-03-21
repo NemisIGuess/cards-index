@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+#Firestore config
+.env
+
 # production
 /build
 

@@ -2,7 +2,13 @@ import './Navigation.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Navigation() {
+function Navigation(provider) {
+  console.log(provider);
+  const signIn = () => {
+    const userLogIn = new provider.auth.GoogleAuthProvider();
+    provider.auth().signInWithPopup(userLogIn);
+  };
+
   return (
     <nav className="navigation">
       <ul className="navigation-list">
@@ -21,6 +27,7 @@ function Navigation() {
         <Link className="navigation-link" to="/rules">
           <li>Reglas</li>
         </Link>
+        <button onClick={signIn}>Sign In</button>
       </ul>
     </nav>
   );

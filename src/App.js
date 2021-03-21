@@ -7,12 +7,25 @@ import Spells from './Components/Spells/Spells';
 import Lands from './Components/Lands/Lands';
 import Rules from './Components/Rules/Rules';
 import Navigation from './Components/Navigation/Navigation';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 const App = () => {
+  const firebaseConfig = {
+    apiKey: process.env.REACT_APP_FIRESTORE_APIKEY,
+    authDomain: process.env.REACT_APP_FIRESTORE_AUTHDOMAIN,
+    projectId: process.env.REACT_APP_FIRESTORE_PROJECTID,
+    storageBucket: process.env.REACT_APP_FIRESTORE_STORAGEBUCKET,
+    messagingSenderId: process.env.REACT_APP_FIRESTORE_MESSAGINGSENDERID,
+    appId: process.env.REACT_APP_FIRESTORE_APPID,
+  };
+
+  const provider = firebase.initializeApp(firebaseConfig);
+
   return (
     // <ContextProvider>
     <div className="container">
-      <Navigation />
+      <Navigation provider={provider} />
       <Switch>
         <Route path="/units" exact component={Units} />
         <Route path="/spells" exact component={Spells} />
