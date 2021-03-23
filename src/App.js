@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-// import ContextProvider from './Components/ContextProvider/Context';
 import Units from './Components/Units/Units';
 import Spells from './Components/Spells/Spells';
 import Lands from './Components/Lands/Lands';
@@ -27,10 +26,14 @@ const App = () => {
     firebase.auth().signInWithPopup(userLogIn);
   };
 
+  const signOut = () => {
+    provider.auth().signOut();
+    console.log(provider.auth().currentUser);
+  };
+
   return (
-    // <ContextProvider>
     <div className="container">
-      <Navigation signIn={signIn} />
+      <Navigation signIn={signIn} signOut={signOut} />
       <Switch>
         <Route path="/units" exact component={Units} />
         <Route path="/spells" exact component={Spells} />
@@ -38,7 +41,6 @@ const App = () => {
         <Route path="/rules" exact component={Rules} />
       </Switch>
     </div>
-    // </ContextProvider>
   );
 };
 

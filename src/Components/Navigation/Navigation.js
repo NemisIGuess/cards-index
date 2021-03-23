@@ -23,6 +23,7 @@ function Navigation(props) {
           <li>Reglas</li>
         </Link>
         <button onClick={props.signIn}>Sign In</button>
+        <button onClick={props.signOut}>Sign out</button>
       </ul>
     </nav>
   );
